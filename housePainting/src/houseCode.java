@@ -20,6 +20,7 @@ public class houseCode {
 		int sqFttoPaint = 0;
 		double costPersqft = 0;
 		double costTotal = 0;
+		//Input all the values of the dimensions of the house 
 		System.out.println("Input length of house: ");
 		length = in.nextInt();
 		System.out.println("Input width of house: ");
@@ -40,12 +41,15 @@ public class houseCode {
 		windowHeight = in.nextInt();
 		System.out.println("Input cost to paint square foot: ");
 		costPersqft = in.nextInt();
+		// Equations to solve for doors, windows, and sqFtNormSide and sqFtPeakside
 		doorTotal = numDoors * doorLength * doorHeight;
 		windowTotal = numWindow * windowLength * windowHeight;
 		sqFtNorm = (length * width)*2;
 		sqFtPeak = ((length * width)+((length*(height-width))/2))*2;
+		//Use the answers from the equations above to find the sqFttoPaint and the sqFttoPaint total to find the total cost.
 		sqFttoPaint = ((sqFtNorm+sqFtPeak)-(windowTotal+doorTotal));
 		costTotal = sqFttoPaint * costPersqft;
+		//Output the total area to paint and how much it would cost to paint.
 		System.out.println("Your total paintable surface area is " + sqFttoPaint + " square feet. ");
 		System.out.println("Cost to paint the house is " + costTotal + " dollars. ");
 		in.close();
