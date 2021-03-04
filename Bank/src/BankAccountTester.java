@@ -4,17 +4,25 @@ public class BankAccountTester {
 	public static void main(String[] args) 
 	{
 Scanner in = new Scanner(System.in);
+Scanner in2 = new Scanner(System.in);
 System.out.print("Enter the amount you want to start the bank account with: ");
 double startBal = in.nextDouble();
-BankAccount myBankAccount = new BankAccount(startBal);
-System.out.print("How much money would you like to withdraw: ");
-double withdrawAmount = in.nextDouble();
-myBankAccount.withdraw(withdrawAmount);
-System.out.print("How much money would you like to deposit: ");
+System.out.print("Enter the interest rate for the account: ");
+double interestAmount = in.nextDouble();
+BankAccount myBankAccount = new BankAccount(startBal,interestAmount);
+System.out.print("Enter the amount you would like to deposit: ");
 double depositAmount = in.nextDouble();
 myBankAccount.deposit(depositAmount);
-System.out.print(myBankAccount.getBalance());
-
+System.out.print("Enter the amount you would like to withdraw: ");
+double withdrawAmount = in.nextDouble();
+myBankAccount.withdraw(withdrawAmount);
+System.out.print("Enter the amount you would like to withdraw: ");
+double withdrawAmountRedo = in.nextDouble();
+myBankAccount.withdraw(withdrawAmountRedo);
+System.out.print("Would you like me to generate interest, Enter 'Yes': ");
+String response = in2.next();
+myBankAccount.calcInterest();
+System.out.print("Your account balance is: "+myBankAccount.getBalance());
 	}
 
 }
