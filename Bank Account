@@ -1,0 +1,66 @@
+/**
+   A bank account has a balance and a mechanism for
+   applying interest or fees at the end of the month.
+*/
+public class BankAccount
+{
+	//Instance variable
+   private double balance;
+
+   /**
+      Constructs a bank account with zero balance.
+   */
+   public BankAccount(double startBal)
+   {
+      balance = startBal;
+   }
+
+   /**
+      Makes a deposit into this account.
+      @param amount the amount of the deposit
+   */
+   public void deposit(double depositAmount)
+   {
+      balance = balance + depositAmount;
+   }
+
+   /**
+      Makes a withdrawal from this account, or charges a penalty if
+      sufficient funds are not available.
+      @param amount the amount of the withdrawal
+   */
+   public void withdraw(double withdrawAmount)
+   {
+      balance = balance - withdrawAmount;
+   }
+   /**
+      Gets the current balance of this bank account.
+      @return the current balance
+   */
+   public double getBalance()
+   {
+      return balance;
+   }
+}
+
+
+import java.util.Scanner;
+public class BankAccountTester {
+
+	public static void main(String[] args) 
+	{
+Scanner in = new Scanner(System.in);
+System.out.print("Enter the amount you want to start the bank account with: ");
+double startBal = in.nextDouble();
+BankAccount myBankAccount = new BankAccount(startBal);
+System.out.print("How much money would you like to withdraw: ");
+double withdrawAmount = in.nextDouble();
+myBankAccount.withdraw(withdrawAmount);
+System.out.print("How much money would you like to deposit: ");
+double depositAmount = in.nextDouble();
+myBankAccount.deposit(depositAmount);
+System.out.print(myBankAccount.getBalance());
+
+	}
+
+}
