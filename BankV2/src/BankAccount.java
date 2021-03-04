@@ -15,7 +15,7 @@ public class BankAccount
    {
       balance = startBal;
       interestPct = intrPct;
-      System.out.println("Created a new account with "+startBal+" balance and an interest rate of "+intrPct);
+      System.out.println("	Created a new account with "+startBal+" balance and an interest rate of "+intrPct);
    }
    
    /**
@@ -25,7 +25,7 @@ public class BankAccount
    public void deposit(double depositAmount)
    {
       balance = balance + depositAmount;
-      System.out.println("Deposited: "+depositAmount);
+      System.out.println("	Deposited: "+depositAmount);
    }
    
    /**
@@ -38,9 +38,9 @@ public class BankAccount
    if(balance >= withdrawAmount)
    
       {balance = balance - withdrawAmount;
-      System.out.println("Withdrew: "+withdrawAmount);}
+      System.out.println("	Withdrew: "+withdrawAmount);}
    else
-	   {System.out.println("Insufficient Funds to support withdrawl");}
+	   {System.out.println("	Insufficient Funds to support withdrawl");}
    }
 	   
    /**
@@ -48,15 +48,13 @@ public class BankAccount
       @return the current balance
    */
   
-   public void calcInterest(double interestAmount)
+   public void calcInterest()
    {
-	   interestPct = balance * interestPct;
-	   balance = balance + interestPct;
-	   if ("response" != null)
-	   {System.out.println("Interest: "+interestPct);}
+	   double interestAmount = balance * interestPct;
+	   balance = balance + interestAmount;
+	   {System.out.println("	Interest: "+interestAmount);}
    }
-   
-   
+     
    
    public double getBalance()
    {

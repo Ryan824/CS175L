@@ -8,8 +8,8 @@ Scanner in2 = new Scanner(System.in);
 System.out.print("Enter the amount you want to start the bank account with: ");
 double startBal = in.nextDouble();
 System.out.print("Enter the interest rate for the account: ");
-double intrPct = in.nextDouble();
-BankAccount myBankAccount = new BankAccount(startBal,intrPct);
+double interestAmount = in.nextDouble();
+BankAccount myBankAccount = new BankAccount(startBal,interestAmount);
 System.out.print("Enter the amount you would like to deposit: ");
 double depositAmount = in.nextDouble();
 myBankAccount.deposit(depositAmount);
@@ -21,7 +21,7 @@ double withdrawAmountRedo = in.nextDouble();
 myBankAccount.withdraw(withdrawAmountRedo);
 System.out.print("Would you like me to generate interest, Enter 'Yes': ");
 String response = in2.next();
-myBankAccount.calcInterest(intrPct);
+myBankAccount.calcInterest();
 System.out.print("Your account balance is: "+myBankAccount.getBalance());
 	}
 
