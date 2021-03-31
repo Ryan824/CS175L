@@ -55,6 +55,10 @@ public class BankAccount
 	   {System.out.println("	Interest: "+interestAmount);}
    }
      
+   public void resetBalance(double startBal)
+   {
+	   balance = startBal;
+   }
    
    public double getBalance()
    {
